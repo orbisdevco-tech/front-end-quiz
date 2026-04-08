@@ -21,28 +21,42 @@
     />
 
     <link rel="stylesheet" href="/styles.css" />
+
+    <!-- pages -->
+    <link rel="stylesheet" href="/pages/home-page.css" />
+    <link rel="stylesheet" href="/pages/quiz-page.css" />
+    <!-- components -->
+    <link rel="stylesheet" href="/components/quiz-header-logo.css" />
   </head>
   <body>
     <!-- Quiz menu start -->
 
     <header>
-      <h1>
-        <span></span>
-      </h1>
+      <h1 id="logo-placeholder"></h1>
 
       <nav>
         <img src="/assets/images/icon-sun-dark.svg" />
-        <button>Toggle</button>
+        <input type="checkbox" />
         <img src="/assets/images/icon-moon-dark.svg" />
       </nav>
     </header>
 
+    <!-- Quiz menu end -->
+
     <main>
+      <!-- dynamic rendering -->
+    </main>
+
+    <!-- Quiz Page start -->
+
+    <template id="home-page-template">
       <section class="hero">
-        <h2 class="hero__heading">
-          Welcome to the
-          <span> Frontend Quiz! </span>
-        </h2>
+        <div>
+          <h2 class="hero__heading">
+            Welcome to the
+            <span> Frontend Quiz! </span>
+          </h2>
+        </div>
         <p class="hero__description">Pick a subject to get started.</p>
       </section>
 
@@ -82,16 +96,58 @@
           </li>
         </ul>
       </nav>
-    </main>
+    </template>
 
-    <!-- Quiz menu end -->
+    <!-- Quiz page end -->
 
     <!-- Quiz question start -->
 
-    <template>
-      Question
-      <!-- number -->
-      of 10 A B C D Submit answer
+    <template id="quiz-header-logo">
+      <span class="quiz-header-logo__icon" role="presentation"></span>
+      <span class="quiz-header-logo__label"> Accessibility </span>
+    </template>
+
+    <template id="quiz-page-template">
+      <section class="quiz-question">
+        <span class="quiz-question__label"> Question 6 of 10 </span>
+
+        <h2>
+          Which of these color contrast ratios defines the minimum WCAG 2.1
+          Level AA requirement for normal text?
+        </h2>
+
+        <progress value="6" max="10"></progress>
+      </section>
+
+      <form class="quiz-answers-form">
+        <fieldset>
+          <label class="option-card">
+            <input type="radio" name="answer" value="A" hidden />
+            <span class="option-card__badge">A</span>
+            <span>4.5 : 1</span>
+          </label>
+
+          <label class="option-card">
+            <input type="radio" name="answer" value="A" hidden />
+            <span class="option-card__badge">A</span>
+            <span>4.5 : 1</span>
+          </label>
+
+          <label class="option-card">
+            <input type="radio" name="answer" value="A" hidden />
+            <span class="option-card__badge">A</span>
+            <span>4.5 : 1</span>
+          </label>
+
+          <label class="option-card">
+            <input type="radio" name="answer" value="A" hidden />
+            <span class="option-card__badge">A</span>
+            <span>4.5 : 1</span>
+          </label>
+        </fieldset>
+
+        <button class="submit-btn">Submit Answer</button>
+      </form>
     </template>
 
     <!-- Quiz question end -->
@@ -105,5 +161,7 @@
     </template>
 
     <!-- Quiz completed end -->
+
+    <script src="/app.js" type="module"></script>
   </body>
 </html>

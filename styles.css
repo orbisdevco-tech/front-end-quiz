@@ -57,82 +57,17 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: var(--space-1600) var(--space-200);
+  padding: var(--space-1600) 0rem;
 }
 
 main {
   max-width: 1157px;
   width: 100%;
   margin: 0 auto;
+}
+
+.main-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--space-1600);
-}
-
-.hero {
-  display: grid;
-  gap: var(--space-600);
-}
-
-.hero__heading {
-  font-weight: lighter;
-  font-size: 4rem;
-  line-height: 100%;
-  color: var(--color-blue-900);
-}
-
-.hero__heading span {
-  display: block;
-  font-weight: 500;
-  margin-top: var(--space-100);
-}
-
-.hero__description {
-  font-weight: 400;
-  font-size: 1.25rem;
-  font-style: italic;
-  line-height: 1.5;
-  font-weight: lighter;
-  color: var(--color-grey-500);
-}
-
-.quiz-menu-list {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-200);
-  list-style: none;
-}
-
-.quiz-menu-list a {
-  display: flex;
-  align-items: center;
-  padding: 1.5rem;
-  background-color: var(--color-white);
-  font-size: 1.75rem;
-  border-radius: 1.5rem;
-  gap: var(--space-400);
-  color: var(--color-blue-900);
-}
-
-.quiz-menu-list span[data-variant] {
-  border-radius: 0.5rem;
-  width: 56px;
-  height: 56px;
-  display: grid;
-  place-content: center;
-}
-
-.quiz-menu-list span[data-variant="orange"] {
-  background-color: var(--color-orange-50);
-}
-
-.quiz-menu-list span[data-variant="green"] {
-  background-color: var(--color-green-100);
-}
-
-.quiz-menu-list span[data-variant="blue"] {
-  background-color: var(--color-blue-50);
-}
-.quiz-menu-list span[data-variant="purple"] {
-  background-color: var(--color-purple-100);
 }
