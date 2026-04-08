@@ -1,11 +1,13 @@
 import { HomePage } from "../pages/home-page.js";
 import { QuizPage } from "../pages/quiz-page.js";
+import { ResultPage } from "../pages/result-page.js";
 
 export const router = {
   root: null,
   init: () => {
     customElements.define("home-page", HomePage);
     customElements.define("quiz-page", QuizPage);
+    customElements.define("result-page", ResultPage);
 
     router.setup();
   },
@@ -37,6 +39,9 @@ export const router = {
       case "/":
         document.body.dataset.page = "home";
         pageNode = document.createElement("home-page");
+        break;
+      case "/result":
+        pageNode = document.createElement("result-page");
         break;
       default:
         document.body.dataset.page = "quiz";

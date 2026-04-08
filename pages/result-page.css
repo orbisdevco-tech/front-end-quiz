@@ -1,0 +1,12 @@
+.result-page__heading {
+  font-weight: lighter;
+  font-size: 4rem;
+  line-height: 100%;
+  color: var(--color-foreground);
+}
+
+.result-page__heading span {
+  display: block;
+  font-weight: 500;
+  margin-top: var(--space-100);
+}

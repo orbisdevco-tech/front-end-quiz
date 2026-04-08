@@ -6,7 +6,7 @@
 }
 
 .quiz-question__label {
-  color: var(--color-grey-500);
+  color: var(--color-muted);
   font-style: italic;
   line-height: 1.5;
   font-size: 1.25rem;
@@ -15,7 +15,7 @@
 .quiz-question h2 {
   font-size: 2.25rem;
   line-height: 1.2;
-  color: var(--color-blue-900);
+  color: var(--color-foreground);
   font-weight: 500;
 }
 
@@ -39,14 +39,14 @@
 .option-card {
   width: 100%;
   display: flex;
-  background-color: var(--color-white);
   padding: 1.25rem;
   border-radius: 1.75rem;
   gap: var(--space-400);
   align-items: center;
   font-size: 1.75rem;
   font-weight: 500;
-  color: var(--color-blue-900);
+  background-color: var(--color-card);
+  color: var(--color-card-foreground);
   position: relative;
   --outline-color: var(--color-purple-600);
 }
@@ -125,7 +125,7 @@
   display: inline;
 }
 
-.submit-btn {
+.primary-btn {
   background-color: var(--color-purple-600);
   color: var(--color-white);
   padding: 1.25rem 2rem;
@@ -136,8 +136,9 @@
   font-weight: 600;
   cursor: pointer;
   margin-top: var(--space-200);
+  width: 100%;
 }
 
-.submit-btn:disabled {
+.primary-btn:disabled {
   opacity: 0.5;
 }

@@ -10,6 +10,7 @@ export class QuizHeaderLogo extends HTMLElement {
     this.appendChild(clonedFragment);
     this.querySelector(".quiz-header-logo__label").textContent =
       this.getLabel();
+    this.querySelector("language-logo").dataset.variant = this.dataset.variant;
   }
 
   getLabel() {

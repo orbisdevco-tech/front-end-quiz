@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -25,8 +25,11 @@
     <!-- pages -->
     <link rel="stylesheet" href="/pages/home-page.css" />
     <link rel="stylesheet" href="/pages/quiz-page.css" />
+    <link rel="stylesheet" href="/pages/result-page.css" />
+
     <!-- components -->
     <link rel="stylesheet" href="/components/quiz-header-logo.css" />
+    <link rel="stylesheet" href="/components/language-logo.css" />
   </head>
   <body>
     <!-- Quiz menu start -->
@@ -36,7 +39,7 @@
 
       <nav>
         <img src="/assets/images/icon-sun-dark.svg" />
-        <input type="checkbox" />
+        <input class="switch" type="checkbox" />
         <img src="/assets/images/icon-moon-dark.svg" />
       </nav>
     </header>
@@ -102,11 +105,6 @@
 
     <!-- Quiz question start -->
 
-    <template id="quiz-header-logo">
-      <span class="quiz-header-logo__icon" role="presentation"></span>
-      <span class="quiz-header-logo__label"> Accessibility </span>
-    </template>
-
     <template id="quiz-page-template">
       <section class="quiz-question">
         <span class="quiz-question__label"> Question 6 of 10 </span>
@@ -123,7 +121,7 @@
         <fieldset>
           <!-- dynamically render -->
         </fieldset>
-        <button class="submit-btn" type="submit">Submit Answer</button>
+        <button class="primary-btn" type="submit">Submit Answer</button>
       </form>
 
       <template id="quiz-answer-template">
@@ -152,15 +150,41 @@
     <!-- Quiz question end -->
 
     <!-- Quiz completed start -->
-    <template>
-      Quiz completed You scored...
+    <template id="result-page-template">
+      <section>
+        <h2 class="result-page__heading">
+          Quiz completed
+          <span>You scored... </span>
+        </h2>
+      </section>
 
       <!-- score -->
-      out of 10
+      <section>
+        <div>out of 10</div>
+        <button class="primary-btn">Play Again</button>
+      </section>
     </template>
+
+    <!-- components -->
+    <template id="language-logo">
+      <span class="language-logo__icon" role="presentation"></span>
+    </template>
+
+    <template id="quiz-header-logo">
+      <language-logo></language-logo>
+      <span class="quiz-header-logo__label">Accessibility</span>
+    </template>
+
+    <!-- end components -->
 
     <!-- Quiz completed end -->
 
+    <!-- <div role="presentation" class="illustration" aria-hidden="true">
+      <img src="/assets/images/pattern-background-desktop-light.svg" />
+      <div role="presentation" class="illustration" aria-hidden="true"></div>
+    </div> -->
+
+    <!-- script -->
     <script src="/app.js" type="module"></script>
   </body>
 </html>

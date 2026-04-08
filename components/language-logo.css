@@ -1,0 +1,29 @@
+.language-logo__icon {
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-content: center;
+  border-radius: 0.5rem;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+language-logo[data-variant="html"] .language-logo__icon {
+  background-color: var(--color-orange-50);
+  background-image: url(/assets/images/icon-html.svg);
+}
+
+language-logo[data-variant="css"] .language-logo__icon {
+  background-color: var(--color-green-100);
+  background-image: url(/assets/images/icon-css.svg);
+}
+
+language-logo[data-variant="javascript"] .language-logo__icon {
+  background-color: var(--color-blue-50);
+  background-image: url(/assets/images/icon-js.svg);
+}
+
+language-logo[data-variant="accessibility"] .language-logo__icon {
+  background-color: var(--color-purple-100);
+  background-image: url(/assets/images/icon-accessibility.svg);
+}
