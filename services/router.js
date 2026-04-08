@@ -29,15 +29,17 @@ export const router = {
     router.root.innerHTML = "";
 
     if (pushHistory) {
-      window.history.pushState({ url }, "", url);
+      window.history.replaceState({ url }, "", url);
     }
 
     let pageNode = null;
     switch (url) {
       case "/":
+        document.body.dataset.page = "home";
         pageNode = document.createElement("home-page");
         break;
       default:
+        document.body.dataset.page = "quiz";
         const quizId = url.substring(url.lastIndexOf("/") + 1);
         pageNode = document.createElement("quiz-page");
         pageNode.dataset.id = quizId;

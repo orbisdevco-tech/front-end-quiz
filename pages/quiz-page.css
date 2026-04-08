@@ -47,16 +47,82 @@
   font-size: 1.75rem;
   font-weight: 500;
   color: var(--color-blue-900);
+  position: relative;
+  --outline-color: var(--color-purple-600);
+}
+
+.option-card[data-status="correct"] {
+  --outline-color: var(--color-green-500);
+}
+
+.option-card[data-status="incorrect"] {
+  --outline-color: var(--color-red-500);
+}
+
+.option-card input {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+.option-card:has(input:disabled) {
+  opacity: 0.8;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 .option-card__badge {
   background-color: var(--color-grey-50);
   border-radius: 0.5rem;
-  width: 56px;
-  height: 56px;
+  min-width: 56px;
+  min-height: 56px;
   display: grid;
   place-content: center;
   color: var(--color-grey-500);
+}
+
+.option-card:focus-within {
+  outline: 2px solid var(--outline-color);
+}
+
+.option-card:has(input:checked) {
+  outline: 2px solid var(--outline-color);
+}
+
+.option-card:hover {
+  outline: 2px solid var(--outline-color);
+  cursor: pointer;
+}
+
+.option-card:has(input:checked) .option-card__badge {
+  background-color: var(--color-purple-600);
+  color: var(--color-white);
+}
+
+.option-card[data-status="correct"] .option-card__badge {
+  background-color: var(--color-green-500) !important;
+  color: var(--color-white);
+}
+
+.option-card[data-status="incorrect"] .option-card__badge {
+  background-color: var(--color-red-500) !important;
+  color: var(--color-white);
+}
+
+.option-card__result img {
+  display: none;
+}
+
+.option-card[data-status="correct"]
+  .option-card__result
+  img[data-role="correct"] {
+  display: inline;
+}
+
+.option-card[data-status="incorrect"]
+  .option-card__result
+  img[data-role="incorrect"] {
+  display: inline;
 }
 
 .submit-btn {
@@ -67,7 +133,11 @@
   border-radius: 1.75rem;
   height: 92px;
   font-size: 1.75rem;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
   margin-top: var(--space-200);
+}
+
+.submit-btn:disabled {
+  opacity: 0.5;
 }

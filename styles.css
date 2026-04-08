@@ -57,13 +57,32 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+body[data-page="home"] header {
   padding: var(--space-1600) 0rem;
+}
+
+body[data-page="quiz"] header {
+  padding: var(--space-800) 0rem;
 }
 
 main {
   max-width: 1157px;
   width: 100%;
   margin: 0 auto;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
 
 .main-container {

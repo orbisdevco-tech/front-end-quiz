@@ -111,7 +111,7 @@
       <section class="quiz-question">
         <span class="quiz-question__label"> Question 6 of 10 </span>
 
-        <h2>
+        <h2 class="quiz-question__text">
           Which of these color contrast ratios defines the minimum WCAG 2.1
           Level AA requirement for normal text?
         </h2>
@@ -121,33 +121,32 @@
 
       <form class="quiz-answers-form">
         <fieldset>
-          <label class="option-card">
-            <input type="radio" name="answer" value="A" hidden />
-            <span class="option-card__badge">A</span>
-            <span>4.5 : 1</span>
-          </label>
-
-          <label class="option-card">
-            <input type="radio" name="answer" value="A" hidden />
-            <span class="option-card__badge">A</span>
-            <span>4.5 : 1</span>
-          </label>
-
-          <label class="option-card">
-            <input type="radio" name="answer" value="A" hidden />
-            <span class="option-card__badge">A</span>
-            <span>4.5 : 1</span>
-          </label>
-
-          <label class="option-card">
-            <input type="radio" name="answer" value="A" hidden />
-            <span class="option-card__badge">A</span>
-            <span>4.5 : 1</span>
-          </label>
+          <!-- dynamically render -->
         </fieldset>
-
-        <button class="submit-btn">Submit Answer</button>
+        <button class="submit-btn" type="submit">Submit Answer</button>
       </form>
+
+      <template id="quiz-answer-template">
+        <label class="option-card" data-status="">
+          <input type="radio" name="answer" value="A" />
+          <span class="option-card__badge">A</span>
+          <span class="option-card__text">4.5 : 1</span>
+
+          <span class="option-card__result" aria-live="polite">
+            <p class="sr-only"></p>
+            <img
+              role="presentation"
+              data-role="correct"
+              src="/assets/images/icon-correct.svg"
+            />
+            <img
+              role="presentation"
+              data-role="incorrect"
+              src="/assets/images/icon-incorrect.svg"
+            />
+          </span>
+        </label>
+      </template>
     </template>
 
     <!-- Quiz question end -->
