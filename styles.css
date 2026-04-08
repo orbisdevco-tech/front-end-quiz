@@ -1,0 +1,42 @@
+:root {
+  --color-white: hsl(0, 100%, 100%);
+  --color-black: hsl(0, 0%, 0%);
+  --color-grey-500: hsl(219, 13%, 44%);
+  --color-grey-50: hsl(220, 38%, 97%);
+  --color-blue-950: hsl(214, 24%, 23%);
+  --color-blue-900: hsl(216, 25%, 25%);
+  --color-blue-850: hsl(215, 27%, 32%);
+  --color-blue-500: hsl(223, 100%, 59%);
+  --color-blue-300: hsl(216, 47%, 78%);
+  --color-blue-100: hsl(220, 50%, 95%);
+  --color-blue-50: hsl(225, 100%, 96%);
+  --color-green-500: hsl(151, 68%, 52%);
+  --color-green-100: hsl(151, 88%, 94%);
+  --color-purple-600: hsl(277, 91%, 56%);
+  --color-purple-100: hsl(278, 100%, 95%);
+  --color-orange-400: hsl(22, 100%, 60%);
+  --color-orange-50: hsl(27, 100%, 96%);
+  --color-red-500: hsl(0, 82%, 63%);
+
+  /* spacing */
+  --space-100: 0.5rem;
+  --space-200: 1rem;
+  --space-300: 1.5rem;
+  --space-400: 2rem;
+  --space-500: 2.5rem;
+  --space-600: 3rem;
+  --space-800: 4rem;
+  --space-1600: 8rem;
+  --space-1800: 9rem;
+  --space-2300: 11.5rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Rubik", sans-serif;
+}
