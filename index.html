@@ -25,25 +25,65 @@
   <body>
     <!-- Quiz menu start -->
 
-    Welcome to the Frontend Quiz! Pick a subject to get started. HTML CSS
-    JavaScript Accessibility
+    <header>
+      <h1>
+        <span></span>
+      </h1>
+
+      <nav>
+        <img src="/assets/images/icon-sun-dark.svg" />
+        <button>Toggle</button>
+        <img src="/assets/images/icon-moon-dark.svg" />
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <h2>
+          Welcome to the
+          <span> Frontend Quiz! </span>
+        </h2>
+
+        Pick a subject to get started.
+      </section>
+
+      <nav>
+        <ul>
+          <li>
+            <a href="/quiz/html"> HTML </a>
+          </li>
+          <li>
+            <a href="/quiz/css"> CSS </a>
+          </li>
+          <li>
+            <a href="/quiz/javascript"> JavaScript </a>
+          </li>
+          <li>
+            <a href="/quiz/accessibility"> Accessibility </a>
+          </li>
+        </ul>
+      </nav>
+    </main>
 
     <!-- Quiz menu end -->
 
     <!-- Quiz question start -->
 
-    Question
-    <!-- number -->
-    of 10 A B C D Submit answer
+    <template>
+      Question
+      <!-- number -->
+      of 10 A B C D Submit answer
+    </template>
 
     <!-- Quiz question end -->
 
     <!-- Quiz completed start -->
+    <template>
+      Quiz completed You scored...
 
-    Quiz completed You scored...
-
-    <!-- score -->
-    out of 10
+      <!-- score -->
+      out of 10
+    </template>
 
     <!-- Quiz completed end -->
   </body>
