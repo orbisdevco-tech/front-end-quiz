@@ -20,7 +20,7 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
     <!-- Quiz menu start -->
@@ -38,28 +38,47 @@
     </header>
 
     <main>
-      <section>
-        <h2>
+      <section class="hero">
+        <h2 class="hero__heading">
           Welcome to the
           <span> Frontend Quiz! </span>
         </h2>
-
-        Pick a subject to get started.
+        <p class="hero__description">Pick a subject to get started.</p>
       </section>
 
       <nav>
-        <ul>
+        <ul class="quiz-menu-list">
           <li>
-            <a href="/quiz/html"> HTML </a>
+            <a href="/quiz/html">
+              <span data-variant="orange">
+                <img src="/assets/images/icon-html.svg" />
+              </span>
+              <span> HTML</span>
+            </a>
           </li>
           <li>
-            <a href="/quiz/css"> CSS </a>
+            <a href="/quiz/css">
+              <span data-variant="green">
+                <img src="/assets/images/icon-css.svg" />
+              </span>
+              <span> CSS</span>
+            </a>
           </li>
           <li>
-            <a href="/quiz/javascript"> JavaScript </a>
+            <a href="/quiz/javascript">
+              <span data-variant="blue">
+                <img src="/assets/images/icon-js.svg" />
+              </span>
+              <span> JavaScript</span></a
+            >
           </li>
           <li>
-            <a href="/quiz/accessibility"> Accessibility </a>
+            <a href="/quiz/accessibility">
+              <span data-variant="purple">
+                <img src="/assets/images/icon-accessibility.svg" />
+              </span>
+              <span> Accessibility</span>
+            </a>
           </li>
         </ul>
       </nav>
