@@ -20,12 +20,12 @@ export const router = {
   setup: () => {
     router.root = document.querySelector("main");
     const links = Array.from(document.querySelectorAll("a"));
-    const handleLinkClick = (e) => {
+    const handleLinkClick = (self) => (e) => {
       e.preventDefault();
-      router.go(e.target.href);
+      router.go(self.href);
     };
     links.forEach((link) => {
-      link.onclick = handleLinkClick;
+      link.onclick = handleLinkClick(link);
     });
   },
 
