@@ -10,6 +10,14 @@ export const router = {
     customElements.define("result-page", ResultPage);
 
     router.setup();
+
+    router.go(window.location.pathname);
+
+    window.addEventListener("popstate", (e) => {
+      router.go(e.state?.url || window.location.pathname, {
+        pushHistory: false,
+      });
+    });
   },
   setup: () => {
     router.root = document.querySelector("main");
@@ -20,14 +28,6 @@ export const router = {
     };
 
     links.forEach((link) => link.addEventListener("click", handleLinkClick));
-
-    router.go(window.location.pathname);
-
-    window.addEventListener("popstate", (e) => {
-      router.go(e.state?.url || window.location.pathname, {
-        pushHistory: false,
-      });
-    });
   },
   go: (url, options = {}) => {
     const defaultOptions = {
@@ -66,6 +66,7 @@ export const router = {
 
     if (pageNode) {
       router.root.appendChild(pageNode);
+      router.setup();
     }
   },
 };
