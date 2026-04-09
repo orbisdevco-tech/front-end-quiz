@@ -28,7 +28,6 @@ export const router = {
   },
 
   go: (url, options = {}) => {
-    console.log("ROUTER --> ", url);
     const defaultOptions = {
       pushHistory: true,
       callback: () => {},
