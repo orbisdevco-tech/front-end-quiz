@@ -5,15 +5,23 @@ export class ResultPage extends HTMLElement {
 
   connectedCallback() {
     const template = document.getElementById("result-page-template");
+    const logoPlaceHolder = document.getElementById("logo-placeholder");
 
     const clonedFragment = template.content.cloneNode(true);
     this.classList.add("main-container");
 
     const headerLogo = document.createElement("quiz-header-logo");
-    const logoPlaceHolder = document.getElementById("logo-placeholder");
     headerLogo.dataset.variant = this.dataset.id;
-    logoPlaceHolder.appendChild(headerLogo);
 
+    logoPlaceHolder.appendChild(headerLogo);
     this.appendChild(clonedFragment);
+
+    const totalScore = this.querySelector("#result-score-total");
+    const score = this.querySelector("#result-score");
+    const cardVariant = this.querySelector("quiz-header-logo");
+
+    totalScore.textContent = this.dataset.totalScore ?? 0;
+    score.textContent = this.dataset.score ?? 0;
+    cardVariant.dataset.variant = this.dataset.id;
   }
 }

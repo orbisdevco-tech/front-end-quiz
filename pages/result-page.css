@@ -10,3 +10,27 @@
   font-weight: 500;
   margin-top: var(--space-100);
 }
+
+.result-page__card {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-600);
+  background-color: var(--color-card);
+  border-radius: 1.5rem;
+  justify-content: center;
+  gap: var(--space-500);
+  text-align: center;
+}
+
+.result-page__card quiz-header-logo {
+  justify-content: center;
+}
+
+.result-page__card h2 {
+  font-size: 4rem;
+}
+
+.result-page__card p {
+  color: var(--color-muted);
+  font-size: 1.5rem;
+}

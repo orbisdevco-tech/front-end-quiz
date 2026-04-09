@@ -43,26 +43,3 @@
   gap: var(--space-400);
   color: var(--color-card-foreground);
 }
-
-.quiz-menu-list span[data-variant] {
-  border-radius: 0.5rem;
-  width: 56px;
-  height: 56px;
-  display: grid;
-  place-content: center;
-}
-
-.quiz-menu-list span[data-variant="orange"] {
-  background-color: var(--color-orange-50);
-}
-
-.quiz-menu-list span[data-variant="green"] {
-  background-color: var(--color-green-100);
-}
-
-.quiz-menu-list span[data-variant="blue"] {
-  background-color: var(--color-blue-50);
-}
-.quiz-menu-list span[data-variant="purple"] {
-  background-color: var(--color-purple-100);
-}

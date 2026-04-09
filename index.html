@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="dark">
+<html lang="en" class="">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -67,33 +67,25 @@
         <ul class="quiz-menu-list">
           <li>
             <a href="/quiz/html">
-              <span data-variant="orange">
-                <img src="/assets/images/icon-html.svg" />
-              </span>
+              <language-logo data-variant="html"></language-logo>
               <span> HTML</span>
             </a>
           </li>
           <li>
             <a href="/quiz/css">
-              <span data-variant="green">
-                <img src="/assets/images/icon-css.svg" />
-              </span>
+              <language-logo data-variant="css"></language-logo>
               <span> CSS</span>
             </a>
           </li>
           <li>
             <a href="/quiz/javascript">
-              <span data-variant="blue">
-                <img src="/assets/images/icon-js.svg" />
-              </span>
+              <language-logo data-variant="javascript"></language-logo>
               <span> JavaScript</span></a
             >
           </li>
           <li>
             <a href="/quiz/accessibility">
-              <span data-variant="purple">
-                <img src="/assets/images/icon-accessibility.svg" />
-              </span>
+              <language-logo data-variant="accessibility"></language-logo>
               <span> Accessibility</span>
             </a>
           </li>
@@ -160,8 +152,14 @@
 
       <!-- score -->
       <section>
-        <div>out of 10</div>
-        <button class="primary-btn">Play Again</button>
+        <div class="result-page__card">
+          <quiz-header-logo></quiz-header-logo>
+          <h2 id="result-score">10</h2>
+          <p>out of <span id="result-score-total"> 10</span></p>
+        </div>
+        <button class="primary-btn">
+          <a href="/"> Play Again </a>
+        </button>
       </section>
     </template>
 
