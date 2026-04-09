@@ -26,6 +26,7 @@ export const router = {
     };
     links.forEach((link) => link.addEventListener("click", handleLinkClick));
   },
+
   go: (url, options = {}) => {
     console.log("ROUTER --> ", url);
     const defaultOptions = {
