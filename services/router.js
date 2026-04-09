@@ -24,7 +24,9 @@ export const router = {
       e.preventDefault();
       router.go(e.target.href);
     };
-    links.forEach((link) => link.addEventListener("click", handleLinkClick));
+    links.forEach((link) => {
+      link.onclick = handleLinkClick;
+    });
   },
 
   go: (url, options = {}) => {
