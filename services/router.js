@@ -66,6 +66,7 @@ export const router = {
 
     if (pageNode) {
       router.root.appendChild(pageNode);
+      window.scrollTo(0, 0);
       router.setup();
     }
   },
