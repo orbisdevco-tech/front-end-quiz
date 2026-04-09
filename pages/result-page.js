@@ -13,15 +13,18 @@ export class ResultPage extends HTMLElement {
     const headerLogo = document.createElement("quiz-header-logo");
     headerLogo.dataset.variant = this.dataset.id;
 
+    logoPlaceHolder.innerHTML = "";
     logoPlaceHolder.appendChild(headerLogo);
     this.appendChild(clonedFragment);
 
     const totalScore = this.querySelector("#result-score-total");
     const score = this.querySelector("#result-score");
-    const cardVariant = this.querySelector("quiz-header-logo");
+    const cardVariant = this.querySelectorAll("quiz-header-logo");
 
     totalScore.textContent = this.dataset.totalScore ?? 0;
     score.textContent = this.dataset.score ?? 0;
-    cardVariant.dataset.variant = this.dataset.id;
+    cardVariant.forEach((card) => {
+      card.dataset.variant = this.dataset.id;
+    });
   }
 }

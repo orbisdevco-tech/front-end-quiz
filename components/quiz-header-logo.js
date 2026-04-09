@@ -6,11 +6,28 @@ export class QuizHeaderLogo extends HTMLElement {
   connectedCallback() {
     const template = document.getElementById("quiz-header-logo");
     const clonedFragment = template.content.cloneNode(true);
-
     this.appendChild(clonedFragment);
-    this.querySelector(".quiz-header-logo__label").textContent =
-      this.getLabel();
-    this.querySelector("language-logo").dataset.variant = this.dataset.variant;
+    this.render();
+  }
+
+  render() {
+    const label = this.querySelector(".quiz-header-logo__label");
+    const logo = this.querySelector("language-logo");
+
+    if (label && logo) {
+      label.textContent = this.getLabel();
+      logo.dataset.variant = this.dataset.variant;
+    }
+  }
+
+  static get observedAttributes() {
+    return ["data-variant"];
+  }
+
+  attributeChangedCallback(name, oldValue, newValue) {
+    if (name === "data-variant" && oldValue !== newValue) {
+      this.render();
+    }
   }
 
   getLabel() {

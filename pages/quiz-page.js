@@ -99,9 +99,14 @@ export class QuizPage extends HTMLElement {
         (ele) => (ele.disabled = true),
       );
 
-      this.querySelector('button[type="submit"]').textContent = "Next Question";
-      this.questions[this.state.currentQuestion].score +=
-        answer === currentQuestion.answer ? 1 : 0;
+      this.querySelector('button[type="submit"]').textContent =
+        this.state.currentQuestion + 1 === this.questions.length
+          ? "Submit Quiz"
+          : "Next Question";
+
+      this.questions[this.state.currentQuestion].score = Number(
+        answer === currentQuestion.answer ? 1 : 0,
+      );
 
       this.querySelector(".option-card__result p").textContent = "Correct";
 
@@ -109,7 +114,16 @@ export class QuizPage extends HTMLElement {
     }
 
     if (this.state.currentQuestion + 1 === this.questions.length) {
-      // we are done here
+      window.app.router.go("/result", {
+        callback: (node) => {
+          node.dataset.id = this.dataset.id;
+          node.dataset.totalScore = this.questions.length;
+          node.dataset.score = this.questions.reduce(
+            (acc, curr) => acc + curr.score,
+            0,
+          );
+        },
+      });
       return;
     }
 

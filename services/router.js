@@ -24,10 +24,22 @@ export const router = {
     router.go(window.location.pathname);
 
     window.addEventListener("popstate", (e) => {
-      router.go(e.state?.url || window.location.pathname, false);
+      router.go(e.state?.url || window.location.pathname, {
+        pushHistory: false,
+      });
     });
   },
-  go: (url, pushHistory = true) => {
+  go: (url, options = {}) => {
+    const defaultOptions = {
+      pushHistory: true,
+      callback: () => {},
+    };
+
+    const { pushHistory, callback } = {
+      ...defaultOptions,
+      ...options,
+    };
+
     router.root.innerHTML = "";
 
     if (pushHistory) {
@@ -49,6 +61,8 @@ export const router = {
         pageNode = document.createElement("quiz-page");
         pageNode.dataset.id = quizId;
     }
+
+    if (callback) callback(pageNode);
 
     if (pageNode) {
       router.root.appendChild(pageNode);
