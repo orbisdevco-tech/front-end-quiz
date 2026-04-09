@@ -56,7 +56,10 @@ export const router = {
         pageNode = document.createElement("result-page");
         break;
       default:
-        if (normalizedPath.startsWith("/quiz")) {
+        if (
+          typeof normalizedPath === "string" &&
+          normalizedPath.startsWith("/quiz")
+        ) {
           document.body.dataset.page = "quiz";
           const quizId = url.substring(url.lastIndexOf("/") + 1);
           pageNode = document.createElement("quiz-page");
