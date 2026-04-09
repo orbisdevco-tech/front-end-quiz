@@ -14,7 +14,8 @@ export const router = {
     router.go(window.location.pathname);
 
     window.addEventListener("popstate", (e) => {
-      router.go(e.state?.url || window.location.pathname, {
+      const url = e.state?.url || window.location.pathname;
+      router.go(url, {
         pushHistory: false,
       });
     });
@@ -47,7 +48,9 @@ export const router = {
     }
 
     let pageNode = null;
-    switch (url) {
+    const normalizedPath = isValidUrl(url) ? new URL(url).pathname : url;
+
+    switch (normalizedPath) {
       case "/":
         document.body.dataset.page = "home";
         pageNode = document.createElement("home-page");
@@ -71,3 +74,12 @@ export const router = {
     }
   },
 };
+
+function isValidUrl(url) {
+  try {
+    new URL(url);
+  } catch {
+    return false;
+  }
+  return true;
+}
