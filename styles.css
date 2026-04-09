@@ -135,9 +135,7 @@ main {
   }
 }
 
-.switch {
-  position: relative;
-}
+/* theme */
 
 .illustration {
   position: absolute;
@@ -190,4 +188,20 @@ main {
 #theme-switch input:checked + .slider::before {
   transform: translateX(20px);
   background-color: var(--color-white);
+}
+
+.theme-icon-dark {
+  display: none;
+}
+
+.theme-icon-light {
+  display: none;
+}
+
+html.dark .theme-icon-dark {
+  display: inline-block;
+}
+
+html:not(.dark) .theme-icon-light {
+  display: inline-block;
 }
