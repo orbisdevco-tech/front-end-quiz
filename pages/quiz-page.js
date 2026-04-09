@@ -1,3 +1,5 @@
+import { quizzesData } from "../lib/data.js";
+
 export class QuizPage extends HTMLElement {
   constructor() {
     super();
@@ -39,11 +41,7 @@ export class QuizPage extends HTMLElement {
   }
 
   async render() {
-    const res = await fetch("/data.json", {
-      method: "GET",
-      "Content-Type": "application/json",
-    });
-    const quizzes = JSON.parse(await res.text()).quizzes.find((ele) => {
+    const quizzes = quizzesData.quizzes.find((ele) => {
       return ele.title.toLocaleLowerCase() === this.dataset.id;
     });
     this.questions = quizzes.questions;

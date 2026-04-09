@@ -28,7 +28,6 @@ export const router = {
       link.onclick = handleLinkClick(link);
     });
   },
-
   go: (url, options = {}) => {
     const defaultOptions = {
       pushHistory: true,
