@@ -8,11 +8,8 @@ export const router = {
     customElements.define("home-page", HomePage);
     customElements.define("quiz-page", QuizPage);
     customElements.define("result-page", ResultPage);
-
     router.setup();
-
     router.go(window.location.pathname);
-
     window.addEventListener("popstate", (e) => {
       const url = e.state?.url || window.location.pathname;
       router.go(url, {
@@ -27,10 +24,10 @@ export const router = {
       e.preventDefault();
       router.go(e.target.href);
     };
-
     links.forEach((link) => link.addEventListener("click", handleLinkClick));
   },
   go: (url, options = {}) => {
+    console.log("ROUTER --> ", url);
     const defaultOptions = {
       pushHistory: true,
       callback: () => {},
