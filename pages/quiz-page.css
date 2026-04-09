@@ -25,6 +25,12 @@
   width: 100%;
 }
 
+@media (width <= 930px) {
+  .quiz-question progress {
+    margin-top: 0;
+  }
+}
+
 .quiz-answers-form {
   display: flex;
   flex-direction: column;

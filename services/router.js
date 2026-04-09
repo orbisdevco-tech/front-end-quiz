@@ -42,8 +42,8 @@ export const router = {
 
     router.root.innerHTML = "";
 
-    if (pushHistory) {
-      window.history.replaceState({ url }, "", url);
+    if (pushHistory && window.location.pathname !== url) {
+      window.history.pushState({ url }, "", url);
     }
 
     let pageNode = null;

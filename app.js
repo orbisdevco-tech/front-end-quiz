@@ -13,20 +13,26 @@ function registerComponents() {
 }
 
 function handleThemeToggle() {
-  const themeSwitch = document.getElementById("theme-switch");
+  const input = document.querySelector("#theme-switch input");
   const htmlRoot = document.querySelector("html");
 
-  const theme = localStorage.getItem("theme");
-  htmlRoot.classList.add(theme);
+  if (!input) return;
 
-  if (!themeSwitch) return;
-  themeSwitch.addEventListener("click", () => {
-    localStorage.setItem(
-      "theme",
-      htmlRoot.classList.contains("dark") ? "light" : "dark",
-    );
-    htmlRoot.classList.toggle("dark");
+  const toggleTheme = (isDark) => {
+    if (isDark) htmlRoot.classList.add("dark");
+    else htmlRoot.classList.remove("dark");
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+  };
+
+  input.addEventListener("input", (e) => {
+    const isChecked = e.target.checked;
+    toggleTheme(isChecked);
   });
+
+  const theme = localStorage.getItem("theme");
+  const isDark = theme == "dark";
+  input.checked = isDark;
+  toggleTheme(isDark);
 }
 
 window.addEventListener("DOMContentLoaded", () => {
