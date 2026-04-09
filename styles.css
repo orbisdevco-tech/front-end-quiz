@@ -32,7 +32,7 @@
 
   /* design system */
 
-  --color-bg: var(--color-blue-100);
+  --color-bg: var(--color-grey-50);
   --color-foreground: var(--color-blue-900);
   --color-muted: var(--color-grey-500);
   --color-card: var(--color-white);
@@ -40,7 +40,7 @@
 }
 
 .dark {
-  --color-bg: var(--color-blue-950);
+  --color-bg: var(--color-blue-900);
   --color-foreground: var(--color-white);
   --color-muted: var(--color-blue-300);
   --color-card: var(--color-blue-850);
@@ -66,6 +66,7 @@ body {
   min-height: 100dvh;
   background-color: var(--color-bg);
   color: var(--color-foreground);
+  position: relative;
 }
 
 @media (width <= 1200px) {
@@ -136,12 +137,6 @@ main {
 }
 
 /* theme */
-
-.illustration {
-  position: absolute;
-  z-index: -1;
-  top: -50%;
-}
 
 #theme-switch {
   position: relative;

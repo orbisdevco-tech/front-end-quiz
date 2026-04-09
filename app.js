@@ -2,6 +2,7 @@ import { router } from "./services/router.js";
 
 import { QuizHeaderLogo } from "./components/quiz-header-logo.js";
 import { LanguageLogo } from "./components/language-logo.js";
+import { BackgroundIllustration } from "./components/background-illustration.js";
 
 window.app = {
   router,
@@ -10,6 +11,7 @@ window.app = {
 function registerComponents() {
   customElements.define("language-logo", LanguageLogo);
   customElements.define("quiz-header-logo", QuizHeaderLogo);
+  customElements.define("bg-illustration", BackgroundIllustration);
 }
 
 function handleThemeToggle() {
